@@ -3,6 +3,7 @@ let app = new Vue({
     el: "#app",
     data: {
         key: "All",
+        keyAuthor:"All",
         myAlbums: null,
         genere:null,
         author:null
@@ -30,10 +31,10 @@ let app = new Vue({
             axios.get('https://flynn.boolean.careers/exercises/api/array/music').then(response=>{
                 let albums = response.data.response
                 this.author = [...new Set(albums.map(item => item.author))] 
-                if(this.key === 'All'){
+                if(this.keyAuthor === 'All'){
                     this.myAlbums = albums 
                 } else{  
-                    this.myAlbums = albums.filter(element=> element.author === this.key)                    
+                    this.myAlbums = albums.filter(element=> element.author === this.keyAuthor)                    
                 }
             })
         }

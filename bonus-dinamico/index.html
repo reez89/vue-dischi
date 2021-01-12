@@ -15,11 +15,11 @@
             <header>
                 <div class="container">
                     <img src="logo.png" alt="logo" />
-                    <select name="generi" id="selezione" @change="changeCategory()" v-model="key">
+                    <select name="generi" id="generi" @change="changeCategory()" v-model="key">
                         <option value="All">All</option>
                         <option v-for="genre in genere" :value="genre">{{genre}}</option>
                     </select>
-                    <select name="generi" id="autori" @change="changeAuthor()" v-model="key">
+                    <select name="generi" id="autori" @change="changeAuthor()" v-model="keyAuthor">
                         <option value="All">All</option>
                         <option v-for="author in author" :value="author">{{author}}</option>
                     </select>
